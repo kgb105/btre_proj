@@ -1,0 +1,15 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block branding %}
+
+    <h1 id="head">
+        <img src="{% static 'img/rock-posters-logo2.png' %}" alt="RockPosters Online"  
+        height="40" width="100" class="brand_img"> Site Admin Area
+    </h1>
+
+{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}
