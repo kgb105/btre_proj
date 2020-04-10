@@ -19,7 +19,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">Home</a>
+            <a href="{% url 'index' %}">Home</a>
           </li>
           <li class="breadcrumb-item">
             <a href="{% url 'listings' %}">Listings</a>
@@ -41,13 +41,17 @@
           <!-- Thumbnails -->
           
           <div class="row mb-5 thumbs">
-            {% if listing.photo_1 %}
-            <div class="col-md-2">
-              <a href="{{ listing.photo_1.url}}" data-lightbox="home-images">
-                <img src="{{ listing.photo_1.url}}" alt="" class="img-fluid">
-              </a>
-            </div>
-            {% endif %}
+
+            {% for photo in photos %}
+              <div class="col-md-2">
+
+                <a href="{{ photo.photo.url}}" data-lightbox="home-images">
+                  <img src="{{ photo.photo.url}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endfor %}
+
+            <!--
             {% if listing.photo_2 %}
             <div class="col-md-2">
               <a href="{{ listing.photo_2.url}}" data-lightbox="home-images">
@@ -85,6 +89,7 @@
             {% endif %}
 
           </div>
+          __!>
           <!-- Fields -->
           <div class="row mb-5 fields">
             <div class="col-md-6">

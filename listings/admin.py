@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Listing, State
+from .models import Listing, State, ListingPhoto
 # Register your models here.
 
 class ListingAdmin(admin.ModelAdmin):
@@ -13,4 +13,6 @@ class ListingAdmin(admin.ModelAdmin):
 admin.site.register(Listing, ListingAdmin)
 
 admin.site.register(State)
+
+admin.site.register(ListingPhoto)
 
