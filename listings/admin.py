@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Listing
+from .models import Listing, State
 # Register your models here.
 
 class ListingAdmin(admin.ModelAdmin):
@@ -11,4 +11,6 @@ class ListingAdmin(admin.ModelAdmin):
     list_per_page = 25
 
 admin.site.register(Listing, ListingAdmin)
+
+admin.site.register(State)
 
