@@ -17,9 +17,9 @@ img {
 #showcase {
   background: url(../img/showcase.jpg) no-repeat top center fixed/cover;
   position: relative;
-  min-height: 650px;
+  min-height: 420px;
   color: #fff;
-  padding-top: 6rem; }
+  padding-top: 0rem; }
   #showcase .home-search {
     min-height: 400px;
     position: relative;
@@ -79,7 +79,7 @@ img {
 
 @media (max-width: 768px) {
   #showcase {
-    padding-top: 3rem; }
+    padding-top: 0rem; }
     #showcase h1 {
       font-size: 40px; }
     #showcase p {
