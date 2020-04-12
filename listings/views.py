@@ -22,7 +22,7 @@ def index(request):
 
 def listing(request, listing_id):
     listing = get_object_or_404(Listing, pk=listing_id)
-    photos = ListingPhoto.objects.filter(listing=listing_id)
+    photos = ListingPhoto.objects.filter(listing=listing_id)[:6]
 
     context = {
         'listing': listing,

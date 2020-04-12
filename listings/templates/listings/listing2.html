@@ -2,7 +2,7 @@
 {% load humanize %}
 {% block title %} | {{ listing.title }} {% endblock %}
 {% block content %}
-  <section id="showcase-inner" class="py-5 text-white">
+    <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
@@ -30,28 +30,30 @@
       </nav>
     </div>
   </section>
-  {% include 'partials/_alerts.html' %}
+
   <!-- Listing -->
   <section id="listing" class="py-4">
     <div class="container">
-      <a href="listings.html" class="btn btn-light mb-4">Back To Listings</a>
+      <a href="{% url 'listings' %}" class="btn btn-light mb-4">Back To Listings</a>
       <div class="row">
         <div class="col-md-9">
           <!-- Home Main Image -->
           <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
           <!-- Thumbnails -->
+          
           <div class="row mb-5 thumbs">
+
             {% for photo in photos %}
-            <div class="col-md-2">
+              <div class="col-md-2">
 
                 <a href="{{ photo.photo.url}}" data-lightbox="home-images">
                   <img src="{{ photo.photo.url}}" alt="" class="img-fluid">
                 </a>
               </div>
             {% endfor %}
-            
-            
           </div>
+            
+          <!-- Fields -->
           <div class="row mb-5 fields">
             <div class="col-md-6">
               <ul class="list-group list-group-flush">
@@ -147,8 +149,8 @@
               <input type="text" name="listing" class="form-control" value="{{ listing.title}}" disabled>
             </div>
             <div class="form-group">
-              <label for="name" class="col-form-label">Name:</label>
-              <input type="name" name="name" class="form-control" {% if user.is_authenticated %} value="{{user.first_name}} {{user.last_name }}" {% endif %} required>
+              <label for="name" class="col-form-label">Name:</label>{% if user.is_authenticated %} value="{{user.name}}" {% endif %}
+              <input type="text" name="name" class="form-control"  required>
             </div>
             <div class="form-group">
               <label for="email" class="col-form-label">Email:</label>

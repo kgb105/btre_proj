@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,3 +143,11 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 
 }
+
+#EMAIL_BACKEND = ‘django.core.mail.backends.smtp.EmailBackend’
+EMAIL_HOST = 'mail.rockposters.com.au'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'george'
+EMAIL_HOST_PASSWORD = '!Erion929'
+#EMAIL_USE_TLS = True
+EMAIL_USE_SSL=True
